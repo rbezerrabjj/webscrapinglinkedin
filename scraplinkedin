@@ -1,0 +1,17 @@
+from selenium import webdriver
+import time
+from selenium.webdriver.common.keys import Keys
+
+email = 'email@email.com'
+password = 'senha'
+
+
+driver = webdriver.Chrome(executable_path='/home/python/chromedriver')
+
+driver_path = "geckodriver.exe"
+
+driver.get('https://www.linkedin.com/login')
+time.sleep(3)
+driver.find_element_by_id('username').send_keys(email)
+driver.find_element_by_id('password').send_keys(password)
+driver.find_element_by_id('password').send_keys(Keys.RETURN)
